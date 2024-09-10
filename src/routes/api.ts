@@ -16,7 +16,7 @@ router.post("/auth/register", authController.register);
 // router.post("/auth/me", authMiddleware, authController.me);
 router.post(
     "/auth/me",
-    [authMiddleware, rbacMiddleware(["admin"])],
+    [authMiddleware, rbacMiddleware(["admin","user"])],
     authController.me
   );
 router.put("/auth/update-profile", authMiddleware, authController.updateProfile);
